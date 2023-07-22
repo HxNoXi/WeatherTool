@@ -1,0 +1,10 @@
+name: WeatherTool
+version: '${project.version}'
+main: ploxdk.lol.mdk.main
+authors: [ Not Found#0001, Spoodermand#5621 ]
+depend:
+  - LuckPerms
+commands:
+  weather:
+    description: Use the Weather Tool.
+    usage: /<command>
