@@ -1,6 +1,6 @@
 # WeatherTool
 This is the source code of Weather Tool.
-You can get the plugin over here [ LINK ]
+You can get the plugin over here [ [SPIGOT](https://www.spigotmc.org/resources/weather-tool.111422/) ]
 
 **#CONFIG**
 
