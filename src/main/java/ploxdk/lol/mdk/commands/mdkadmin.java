@@ -27,8 +27,8 @@ public class mdkadmin implements CommandExecutor {
 
             final Player player = (Player) sender;
             String adminperms = plugin.getConfig().getString("AdminPerm");
-            if (args.length <= 0){
-                if (player.hasPermission(adminperms)) {
+            if (player.hasPermission(adminperms)) {
+                if (args.length <= 0){
                     player.sendMessage(Color.translate("&cYou need to define something!"));
                     player.sendMessage(Color.translate("&cExample:"));
                     player.sendMessage(Color.translate("&e/weather reload"));
@@ -36,14 +36,7 @@ public class mdkadmin implements CommandExecutor {
                     player.sendMessage(Color.translate("&e/weather rain"));
                     player.sendMessage(Color.translate("&e/weather day"));
                     player.sendMessage(Color.translate("&e/weather night"));
-                    return true;
-                }else{
-                    player.sendMessage(Color.translate(String.format("&fThis server is running &bWeather &fversion &b" + plugin.getDescription().getVersion())));
-                    player.sendMessage(Color.translate("&fCreated and maintained by &bNot Found#0001"));
-                    return true;
                 }
-            }
-            if (player.hasPermission(adminperms)) {
                 if (args[0].equalsIgnoreCase("reload")) {
                     player.sendMessage(Color.translate(reloadmessage));
                     Bukkit.getConsoleSender().sendMessage(Color.translate("&a[]==========[ STAFF CHAT ]==========[]"));
@@ -75,7 +68,9 @@ public class mdkadmin implements CommandExecutor {
                     player.sendMessage(Color.translate(night));
                 }
             }else{
-                player.sendMessage(Color.translate(noaccess));
+                player.sendMessage(Color.translate(String.format("&fThis server is running &bWeather &fversion &b" + plugin.getDescription().getVersion())));
+                player.sendMessage(Color.translate("&fCreated and maintained by &bNot Found#0001"));
+                return true;
             }
         }
         return true;
