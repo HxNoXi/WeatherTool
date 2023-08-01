@@ -1,22 +1,30 @@
 package ploxdk.lol.mdk.misc;
 
-import org.bukkit.ChatColor;
-
 import java.util.List;
-import java.util.stream.Collectors;
+import net.md_5.bungee.api.ChatColor;
 
 public class Color {
-
-    public static String translate(String source) {
-        return ChatColor.translateAlternateColorCodes('&', source);
+    public static String plain(String s) {
+        return s.replaceAll(",", "&");
     }
 
-    public static String translate(String player, String source) {
-        source = translate(source);
-        return translate(source);
+    public static String[] getColored(String... stringList) {
+        if (stringList == null)
+            return null;
+        for (int i = 0; i < stringList.length; i++)
+            stringList[i] = getColored(stringList[i]);
+        return stringList;
     }
 
-    public static List<String> translate(List<String> source) {
-        return source.stream().map(Color::translate).collect(Collectors.toList());
+    public static List<String> getColored(List<String> stringList) {
+        if (stringList == null)
+            return null;
+        for (int i = 0; i < stringList.size(); i++)
+            stringList.set(i, getColored(stringList.get(i)));
+        return stringList;
+    }
+
+    public static String getColored(String s) {
+        return ChatColor.translateAlternateColorCodes('&', s);
     }
 }
