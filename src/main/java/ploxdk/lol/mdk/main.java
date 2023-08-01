@@ -14,7 +14,6 @@ public final class main extends JavaPlugin {
     public void onEnable() {
         log = Bukkit.getConsoleSender();
         log.sendMessage(Color.getColored(new String[] { "&8&m---------------------------------&r", "", "  &2Enabling &aWeatherTool.jar &fv" + getDescription().getVersion() , "    &aAuthors: &f" + getDescription().getAuthors(), "", "&8&m---------------------------------&r" }));
-
         this.getConfig();
         this.saveDefaultConfig();
         this.getCommand("weather").setExecutor((CommandExecutor)new mdkadmin(this));
