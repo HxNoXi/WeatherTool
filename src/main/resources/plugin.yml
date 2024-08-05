@@ -1,7 +1,8 @@
 name: WeatherTool
 version: '${project.version}'
-main: ploxdk.lol.mdk.main
-authors: [ Not Found#0001, Spoodermand#5621 ]
+main: dk.noxitech.main
+authors: [ notfoundofficial, NoXi ]
+api-version: 1.21
 softdepend:
   - LuckPerms
 commands:
