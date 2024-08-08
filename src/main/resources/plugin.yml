@@ -1,6 +1,6 @@
 name: WeatherTool
 version: '${project.version}'
-main: dk.noxitech.main
+main: dk.noxitech.weathertool.main
 authors: [ notfoundofficial, NoXi ]
 api-version: 1.21
 softdepend:
