@@ -5,6 +5,7 @@ import org.bukkit.command.ConsoleCommandSender;
 import org.bukkit.plugin.java.JavaPlugin;
 import dk.noxitech.commands.admin;
 import dk.noxitech.misc.Color;
+import java.util.Objects;
 
 public final class main extends JavaPlugin {
     public static ConsoleCommandSender log;
@@ -20,11 +21,10 @@ public final class main extends JavaPlugin {
                 "",
                 "&8&m---------------------------------&r"
         }));
-
         saveDefaultConfig();
         admin adminCommand = new admin(this);
-        this.getCommand("weather").setExecutor(adminCommand);
-        this.getCommand("weather").setTabCompleter(adminCommand);
+        Objects.requireNonNull(this.getCommand("weather")).setExecutor(adminCommand);
+        Objects.requireNonNull(this.getCommand("weather")).setTabCompleter(adminCommand);
     }
 
     @Override
